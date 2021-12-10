@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/loginFragment"
+    android:id="@+id/navigator">
+
+    <fragment
+        tools:layout="@layout/fragment_list_note"
+        android:id="@+id/listNoteFragment"
+        android:name="gst.trainingcourse.studen_school_management.view.fragment.ListNoteFragment"
+        android:label="ListNoteFragment">
+
+
+        <action
+            android:id="@+id/fron_listNoteFragment_to_addFragment"
+            app:destination="@id/addNoteFragment"/>
+    </fragment>
+
+
+
+    <fragment
+        tools:layout="@layout/fragment_login"
+        android:id="@+id/loginFragment"
+        android:name="gst.trainingcourse.studen_school_management.view.fragment.LoginFragment"
+        android:label="LoginFragment"
+        >
+
+        <action android:id="@+id/from_loginFramgent_to_listNoteFragment"
+            app:destination="@id/listNoteFragment"/>
+
+    </fragment>
+
+    <fragment
+        tools:layout="@layout/fragment_add_note"
+        android:id="@+id/addNoteFragment"
+        android:name="gst.trainingcourse.studen_school_management.view.fragment.AddNoteFragment"
+        android:label="AddNoteFragment">
+
+        <action
+            android:id="@+id/from_addNote_to_listNote"
+            app:destination="@+id/listNoteFragment"/>
+    </fragment>
+
+
+</navigation>
